@@ -1,0 +1,79 @@
+{% extends 'padre/base.html' %}
+{% block titulo %}
+Registrar
+{% endblock titulo %}
+{% block contenido %}
+
+<style>
+    @media(max-width:500px){
+        .contra{
+            display: flex;
+            flex-direction: column;
+        }
+        .contra1{
+            width: 100%;
+        }
+    }
+</style>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <main class="container">
+        <section class="row">
+            <h1 class="text-center">Bienvenido</h1>
+        </section>
+        <section class="row">
+            <fieldset class="col-12">
+                <label for="{{ Registrar.username.id_for_label }}" >
+                    {{ Registrar.username.label }} 
+                </label>
+                {{ Registrar.username }}
+                <p class="feedback-invalid">
+                    {{ Registrar.username.errors }}
+                </p>
+            </fieldset>
+        </section>
+        <section class="row">
+            <fieldset class="col-12">
+                <label for="{{ Registrar.email.id_for_label }}" >
+                    {{ Registrar.email.label }}
+                </label>
+                {{ Registrar.email }}
+                <p class="feedback-invalid">
+                    {{ Registrar.email.errors }}
+                </p>
+            </fieldset>
+        </section>
+        <section class="row contra">
+            <fieldset class="col-6 contra1">
+                <label for="{{ Registrar.password1.id_for_label }}" >
+                    {{ Registrar.password1.label }}
+                </label>
+                {{ Registrar.password1 }}
+                {{ Registrar.password1.help_text }}
+                <p class="feedback-invalid">
+                    {{ Registrar.password1.errors }}
+                </p>
+            </fieldset>
+            <fieldset class="col-6 contra1" >
+                <label for="{{ Registrar.password2.id_for_label }}" >
+                    {{ Registrar.password2.label }}
+                </label>
+                {{ Registrar.password2 }}
+                {{ Registrar.password2.help_text }}
+                <p class="feedback-invalid">
+                    {{ Registrar.password2.errors }}
+                </p>
+            </fieldset>
+        </section>
+        <section class="row">
+            <fieldset class="offset-md-4 col-md-4 col-12">
+                <div class="d-grid">
+                    <button class="btn btn-success" style="background-color: red;">Registrar</button>
+                </div>
+            </fieldset>
+        </section>
+    </main>
+</form>
+{% endblock contenido %}

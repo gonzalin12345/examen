@@ -1,0 +1,37 @@
+{% extends 'padre/base.html' %}
+{% load static %}
+
+
+<link rel="stylesheet" href="{% static 'm_user/css/principal.css' %}">
+<link href="{% static 'm_user/css/carousel.css' %}" rel="stylesheet">
+
+
+
+{% block contenido %}
+<section class="container">
+    <div class="descuento">
+    <h4 style="color: green;">VENTA ESPECIAL HASTA 50%OFF</h4>
+    </div>
+    <hr>
+    <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner" style="width: 100%; height: 80%; margin-left:-5%; margin-top: 5%;">
+        <div class="carousel-item active">
+            <img src="{% static 'm_user/img/carusel2.png' %}" class="d-block w-100" alt="">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'm_user/img/carusel3.jpg' %}" class="d-block w-100" alt="">
+        </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+        </button>
+    </div> 
+
+{% endblock contenido %}
+
+

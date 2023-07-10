@@ -1,0 +1,35 @@
+{% extends 'padre/base.html' %}
+{% load humanize %}
+{% load static %}
+{% block contenido %}
+<link rel="stylesheet" href="{% static 'padre/css/principal.css' %}">
+
+<section>
+    <div class="ven">
+        <i class='bx bx-log-out icon' ><i class="fa-solid fa-megaphone" style="color: #f8f9fc;"></i></i></i>
+        <h3 style="color: green;">Lo mas vendido </h3>
+    </div>  
+</section>
+
+{% for productos in listar %}
+<section class="products">
+    <div class="all-products">
+        <div class="product">
+            {% if productos.foto %}
+            <img src="{{ productos.foto.url }}" alt="imagen producto">
+            {% endif %}
+            <div class="product-info">
+                
+                <h6 class=" product-title"> {{ productos.marca }}  </h6>
+                <h4 class="product-title">{{ productos.nombre | capfirst }}</h4>
+                <p class="product-price">{{ productos.precio | intcomma }}</p>
+                <a class="product-btn" href="{% url 'agregar' productos.id %}">Comprar</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endfor %}
+
+
+
+{% endblock contenido %}

@@ -1,0 +1,32 @@
+{% extends 'padre/base.html' %}
+{% load static %}
+{% block titulo %}
+Entrar
+{% endblock titulo %}
+{% block contenido %}
+
+<style>
+    .login{
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: gray;
+    }
+</style>
+
+
+<main class="login" >   
+    <section class="form-container">
+        <h1 class="text-center">Iniciar sesion</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ Entrar.usuario }}
+            <label for="{{ Entrar.usuario.id_for_label }}">{{ Entrar.usuario.label }}</label>
+
+            {{ Entrar.contrasenia_usuario }}
+            <label for="{{ Entrar.usuario.id_for_label }}">{{ Entrar.contrasenia_usuario.label }}</label>
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Entrar</button>
+        </form>
+    </section>
+    {% endblock contenido %}

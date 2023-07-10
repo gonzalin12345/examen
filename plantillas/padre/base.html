@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block titulo %}
+        Base
+        {% endblock titulo %}
+    </title>
+    <link rel="stylesheet" href="{% static 'padre/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'padre/css/principal.css' %}">
+    {% block css %}
+    {% endblock css %}
+</head>
+<body>
+
+    {% include 'padre/navbar.html' %}
+    {% block contenido %}
+                           
+    {% endblock contenido %}
+            
+    
+    <script src="{% static 'padre/js/bootstrap.bundle.min.js' %}"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    {% load sweetify %}
+    {% sweetify %}
+    {% block js %}
+    {% endblock js %}
+</body>
+</html>

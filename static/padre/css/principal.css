@@ -1,0 +1,152 @@
+@media (max-width: 400px){
+    .carousel {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+       
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .descuento {
+       margin-left: 29%; 
+    }
+
+    hr{
+        margin-left: 51%;
+        margin-top: -17px;  
+    
+    }
+}
+
+
+h3{
+    margin-left: 30px;
+}
+
+.descuento{
+    margin-left: 32%;
+    
+}
+
+
+hr{
+    border: 1px solid black; 
+    margin-left: 56%; 
+    margin-top: -20px;
+}
+
+
+
+.ven {
+    margin-left: 40%;
+    margin-top: 3px;
+  
+}
+
+.carousel {
+    margin-left: 15%
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-shadow: border-box;
+
+}
+
+body{
+    font-size: 1rem;
+    font-family: 'marryweather Sans', sans-serif;
+    background:#2c3e50 ;
+    color: #acecec;
+    flex-direction: column;
+}
+
+
+h2{
+    text-align: center;
+    margin-bottom: 5rem;
+    font-size: 4rem;
+}
+
+
+
+.all-products{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+
+.products{
+    display: flex;
+    flex-direction: column;
+    display: inline-flex;
+    margin-left: 8%;
+
+}
+
+.product{
+    overflow: hidden;
+    background: #ffffff;
+    color: #21201e;
+    text-align: center;
+    width: 240px;
+    height: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.2rem;
+    margin: 2rem;
+    
+}
+
+
+.product:hover img{
+    scale: 1.1;
+
+}
+
+
+.product:hover {
+    box-shadow: 5px 15px 25px #ffffff;
+}
+
+.product img {
+    height: 130px;
+    margin: 1rem;
+    transition: all 0.3s;
+
+}
+
+.product a:link , .product a:visited {
+    color: #acecec;
+    display: inline-block;
+    text-decoration:none ;
+    background-color: #21201e;
+    padding: 1.2rem 3rem ;
+    border-radius: 1rem ;
+    transition: all 0.2s;
+
+}
+
+.product a:hover {
+    transform: scale(1.1);
+}
+
+

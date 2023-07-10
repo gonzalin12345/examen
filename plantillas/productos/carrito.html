@@ -1,0 +1,40 @@
+{% extends 'padre/base.html' %}
+{% load static %}
+
+
+{% block contenido %}
+
+<link href="{% static 'padre/css/carro.css' %}" rel="stylesheet">
+
+<section class="container">
+  <div class="card">
+    <div class="card-header">
+      <h5 class="card-title text-center">CARRITO DE COMPRAS</h5>
+    </div>
+    <div class="card-body">
+        {% for productos in carrito %}
+            <section class="products">
+              <div class="all-products">
+                <div class="product">
+                  {% if productos.foto %}
+                    <img src="{{ productos.foto.url }}" alt="imagen producto">
+                  {% endif %} 
+                  <div class="product-info">
+
+                    <h6 class=" product-title"> {{ productos.marca }} </h6>
+                    <h4 class="product-title">{{ productos.nombre }}</h4>
+                    <p class="product-price">{{ productos.precio }}</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+        {% endfor %}
+    </div>
+    <div class="card-footer text-center">
+      <a href="#" class="btn btn-secondary">Limpiar Carrito</a>
+      <a href="#" class="btn btn-success">Realizar Compra</a>
+    </div>
+  </div>
+</section>
+
+{% endblock contenido %}
