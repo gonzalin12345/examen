@@ -71,3 +71,12 @@ def agregar_carrito (request, id_producto):
         nuevo_detalle.save()
     success(request,f"Producto {producto_elegido.nombre} Agregado")
     return redirect("carrito")
+
+@user_passes_test(es_superusuario)
+def listar_producto(request):
+    productos = ModeloProducto.objects.all()
+
+    contexto ={
+        'productos' : productos
+    }
+    return render(request, 'productos/historial.html', contexto)
